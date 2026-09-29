@@ -1,47 +1,93 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ask a Question</title>
-    <style>
-        body {<img src="/static/images/young-man-playing-guitar-lake (1).jpg" alt="活動照片">
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px;
-            text-align: center;
-        }
-        section {
-            margin: 20px;
-        }
-        .form-box {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>課外活動</title>
+<style>
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+background-color: #f4f6f8;
+color: #333;
+}
+
+/* 頂部綠色 Banner */
+.header-banner {
+background-color: #4caf50;
+color: white;
+text-align: center;
+padding: 25px 0;
+font-size: 1.5rem;
+font-weight: bold;
+}
+
+/* 主要內容區 */
+.container {
+max-width: 800px;
+margin: 30px auto;
+padding: 0 20px;
+}
+
+/* 活動區塊 */
+.activity-box {
+background: #ffffff;
+border-radius: 8px;
+padding: 25px;
+margin-bottom: 25px;
+box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.activity-title {
+font-size: 1.25rem;
+font-weight: bold;
+color: #2e7d32;
+margin-bottom: 12px;
+display: flex;
+align-items: center;
+gap: 8px;
+}
+
+.activity-desc {
+font-size: 0.95rem;
+color: #555;
+margin-bottom: 15px;
+line-height: 1.6;
+}
+
+/* 照片樣式 */
+.activity-img {
+width: 100%;
+max-height: 450px;
+object-fit: cover;
+border-radius: 6px;
+}
+</style>
 </head>
 <body>
-    <header>
-        <h1>課外活動</h1>
-    </header>
-    <section>
-        <div class="form-box">
-            <form action="/activities" method="post">
-                <label for="question">你的問題:</label><br>
-                <input type="text" id="question" name="question" value="{{ question }}"><br><br>
-                <label for="answer">答案:</label><br>
-                <input type="text" id="answer" name="answer" readonly value="{{ answer }}"><br><br>
-                <input type="submit" value="送出">
-                <input type="button" value="回首頁" onclick="window.location.href='/'">
-            </form>
-        </div>
-    </section>
+
+<!-- 頂部綠色條 -->
+<div class="header-banner">
+課外活動
+</div>
+
+<div class="container">
+
+<!-- 第一個活動：吉他社團 -->
+<div class="activity-box">
+<div class="activity-title">🪴 社團活動：吉他社團</div>
+<div class="activity-desc">在團隊合奏中學習合作與溝通。</div>
+<!-- 把檔名替換成你在 static/images/ 裡的照片全名 -->
+<img src="{{ url_for('static', filename='images/你的苔球照片檔名.jpg') }}" class="activity-img" alt="吉他社團">
+</div>
+
 </body>
 </html>
+
+
+
