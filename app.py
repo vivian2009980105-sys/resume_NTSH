@@ -104,7 +104,7 @@ def ai():
     return render_template('ai.html')
 @app.route('/chiikawa')
 def chiikawa():
-return render_template('chiikawa.html')
+    return render_template('chiikawa.html')
 
 
 if __name__ == '__main__':
